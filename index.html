@@ -1,60 +1,10 @@
 <!DOCTYPE html>
-
 <html>
-    <head>
-        <meta charset="utf-8" />
-        <title>poopy site</title>
-        <link type="image/png" rel="shortcut icon" href="favicon.ico" />
-    </head>
+	<head>
+		<title>whatever</title>
+	</head>
 
-    <body>
-        <h1>roo bot server link</h1>
-		<a href="https://discord.com/api/oauth2/authorize?client_id=819000887091003456&permissions=70368744177655&scope=bot">all permissions (enable what you only need please)</a>
-		<article> </article>
-		<a href="https://discord.com/api/oauth2/authorize?client_id=819000887091003456&permissions=8&scope=bot">administrator permission only</a>
-
-		<h1>roo bot authorization</h1>
-        <a id="login" style="display: none;" href="https://discord.com/api/oauth2/authorize?client_id=819000887091003456&redirect_uri=https%3A%2F%2Fev11nroo.github.io%2Findex&response_type=code&scope=identify">authorize</a>
-        <script>
-			function generateRandomString() {
-				let randomString = '';
-				const randomNumber = Math.floor(Math.random() * 10);
-
-				for (let i = 0; i < 20 + randomNumber; i++) {
-					randomString += String.fromCharCode(33 + Math.floor(Math.random() * 94));
-				}
-
-				return randomString;
-			}
-
-	        window.onload = () => {
-		        const fragment = new URLSearchParams(window.location.hash.slice(1));
-		        const [accessToken, tokenType] = [fragment.get('access_token'), fragment.get('token_type')];
-
-		        if (!accessToken) {
-					const randomString = generateRandomString();
-					localStorage.setItem('oauth-state', randomString);
-
-					document.getElementById('login').href += `&state=${btoa(randomString)}`;
-			        return (document.getElementById('login').style.display = 'block');
-		        }
-
-				if (localStorage.getItem('oauth-state') !== atob(decodeURIComponent(state))) {
-					return console.log('you may have been clickjacked');
-				}
-
-		        fetch('https://discord.com/api/users/@me', {
-			        headers: {
-				        authorization: `${tokenType} ${accessToken}`,
-			        },
-		        })
-			    .then(result => result.json())
-			    .then(response => {
-				    const { username, discriminator } = response;
-				    document.getElementById('info').innerText += ` ${username}#${discriminator}`;
-			    })
-			    .catch(console.error);
-	        };
-        </script>
-    </body>
+	<body>
+		uhhh i dont know what to do anymore
+	</body>
 </html>
