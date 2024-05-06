@@ -1,134 +1,44 @@
 <!DOCTYPE html>
 
 <html>
-    
     <head>
-        <style id="style">
+        <style>
             body {background-color: rgb(33, 36, 44);}
-            h1, label, p {color: rgb(243, 255, 251); font-family: 'Courier New', Courier, monospace; font-weight: bolder;}
-            button {font-family: 'Courier New', Courier, monospace;}
+            h1, p {color: rgb(243, 255, 251); font-family: 'Courier New', Courier, monospace; font-weight: bolder;}
         </style>
         <script>
-            let style = 0;
+            let isInput = true
 
-            function changeStyle() {
-                style += 1
-
-                if (style == 1) {
-                    document.getElementById('body').style.background = "rgb(211, 214, 222)"
-
-                    for (i = document.getElementsByName('main').length - 1; i >= 0; i--) {
-                        document.getElementsByName('main')[i].style.color = "rgb(27, 50, 44)"
-                    }
-                } else {
-                    style = 0
-                    document.getElementById('body').style.background = "rgb(33, 36, 44)"
-
-                    for (i = document.getElementsByName('main').length- 1; i >= 0; i--) {
-                        document.getElementsByName('main')[i].style.color = "rgb(243, 255, 251)"
-                    }
-                } 
-            }
-
-            function copyToClipboard() {
-                if (document.getElementById('playtoken').value != "") {
-                    navigator.clipboard.writeText(document.getElementById('playtoken').value)
-                    alert(`Copied ${document.getElementById('playtoken').value} to clipboard!`)
-                    return 0;
-                }
-                alert('Cannot copy empty string!')
-            }
-
-            function openHelp() {
-                window.open('./help.html', 'Help', 'width=625, height=625');
-            }
-        </script>
-        <script>
-            function generate(num) {
-                /*const options = {
-                    method: 'POST',
-                    headers: {
-                        cookie: `${cookie}`
-                    },
-                    body: 'false'
-                };*/
-
-                const cookie = document.getElementById('cookie').value
-                const gameId = document.getElementById('gameId').value
-                const privateServerAccessCode = document.getElementById('accessCode').value
-                const replicate = document.getElementById('replicate').checked
-                const unixtime = Math.floor(Date.now() / 1000);
-                const browserTrackerId = document.getElementById('browserId').value
-                const joinAttemptId = document.getElementById('joinId').value
-
+            function send(num) {
                 if (num == 1) {
-                    const options = {
-                        method: 'POST',
-                        headers: {
-                            cookie: `${cookie}`,
-                            referer: 'https://www.roblox.com/'
-                        },
-                        body: 'false'
-                    };
-                    //document.getElementById('playtoken').value = `cookie: ${cookie}\ngame id: ${gameId}\naccess code: ${privateServerAccessCode}\nreplicate: ${replicate}\nunixtime: ${unixtime}\nbrowser: ${browserTrackerId}\njoin attempt: ${joinAttemptId}`
-                    const aquireXCSRF = fetch('https://auth.roblox.com/v2/logout', options)
-                        .then(async response => { 
-                            const csrf = await response.headers.get('x-csrf-token');
-                            if (!csrf) {
-                                console.error('XCSRF Token could not be grabbed. (1)')
-                                return 1;
-                            }
-
-                            console.log('Got XCSRF Token successfully!')
-                            return csrf
-                        })
-                        .catch(err => console.error(err))
-                    aquireXCSRF.then(csrf => {
-                        console.log(csrf)
-                    })
-
-                    return
+                    document.getElementById('output').innerHTML = document.getElementById('input').value;
+                    return;
                 }
-                document.getElementById('playtoken').value = ""
+                document.getElementById('output').innerHTML = null;
+            }
+
+            function change() {
+                if (isInput) {
+                    isInput = false
+                    document.getElementById('input').outerHTML = "<textarea id='input' rows=15 cols=75></textarea>";
+                    document.getElementById('change').textContent = "change to input"
+                    return;
+                }
+                isInput = true
+                document.getElementById('change').textContent = "change to textarea"
+                document.getElementById('input').outerHTML = "<input type='text' id='input'>"
             }
         </script>
-        <title>Roblox Playtoken Generator</title>
+        <title>whatever</title>
     </head>
-    <body id="body">
-        <button onclick="changeStyle()" style="float: right;">Change Theme</button>
-        <button onclick="openHelp()" style="right: 10px; position: absolute; top: 50px">Help</button>
-        <h1 name="main">Roblox Playtoken Generator</h1>
-        
-        <form>
-            <div>
-                <label name="main">Cookie*</label><br>
-                <input type="text" id="cookie"><br><br>
+    <body>
+        <button id="change" style="float: right" onclick="change()">change to textarea</button>
+        <h1>ameuter</h1>
 
-                <label name="main">Game ID*</label><br>
-                <input type="text" id="gameId"><br><br>
+        <input type="text" id="input">
+        <button onclick="send(1)">set text</button>
+        <button onclick="send(2)">clear</button>
 
-                <label name="main">Private Server Access Code**</label><br>
-                <input type="text" id="accessCode"><br><br>
-            </div>
-            <div style="position: absolute; left: 375px; top: 80px;"> 
-                <input type="checkbox" id="replicate">
-                <label name="main">Replicate</label><br><br>
-
-                <label name="main">Browser Tracker ID</label><br>
-                <input type="text" id="browserId"><br><br>
-
-                <label name="main">Join Attempt ID</label><br>
-                <input type="text" id="joinId">
-            </div>
-        </form>
-        <div>
-            <button onclick="generate(1)">Generate</button>
-            <button onclick="generate(2)">Clear</button><br><br>
-        </div>
-        <div>
-            <label name="main">Playtoken: </label>
-            <button id="copy" onclick="copyToClipboard()">Copy To Clipboard</button><br>
-            <textarea id="playtoken" rows="15" cols="75" readonly></textarea>
-        </div>
+        <p id="output"></p>
     </body>
 </html>
