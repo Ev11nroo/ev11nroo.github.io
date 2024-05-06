@@ -1,10 +1,134 @@
 <!DOCTYPE html>
-<html>
-	<head>
-		<title>whatever</title>
-	</head>
 
-	<body>
-		uhhh i dont know what to do anymore
-	</body>
+<html>
+    
+    <head>
+        <style id="style">
+            body {background-color: rgb(33, 36, 44);}
+            h1, label, p {color: rgb(243, 255, 251); font-family: 'Courier New', Courier, monospace; font-weight: bolder;}
+            button {font-family: 'Courier New', Courier, monospace;}
+        </style>
+        <script>
+            let style = 0;
+
+            function changeStyle() {
+                style += 1
+
+                if (style == 1) {
+                    document.getElementById('body').style.background = "rgb(211, 214, 222)"
+
+                    for (i = document.getElementsByName('main').length - 1; i >= 0; i--) {
+                        document.getElementsByName('main')[i].style.color = "rgb(27, 50, 44)"
+                    }
+                } else {
+                    style = 0
+                    document.getElementById('body').style.background = "rgb(33, 36, 44)"
+
+                    for (i = document.getElementsByName('main').length- 1; i >= 0; i--) {
+                        document.getElementsByName('main')[i].style.color = "rgb(243, 255, 251)"
+                    }
+                } 
+            }
+
+            function copyToClipboard() {
+                if (document.getElementById('playtoken').value != "") {
+                    navigator.clipboard.writeText(document.getElementById('playtoken').value)
+                    alert(`Copied ${document.getElementById('playtoken').value} to clipboard!`)
+                    return 0;
+                }
+                alert('Cannot copy empty string!')
+            }
+
+            function openHelp() {
+                window.open('./help.html', 'Help', 'width=625, height=625');
+            }
+        </script>
+        <script>
+            function generate(num) {
+                /*const options = {
+                    method: 'POST',
+                    headers: {
+                        cookie: `${cookie}`
+                    },
+                    body: 'false'
+                };*/
+
+                const cookie = document.getElementById('cookie').value
+                const gameId = document.getElementById('gameId').value
+                const privateServerAccessCode = document.getElementById('accessCode').value
+                const replicate = document.getElementById('replicate').checked
+                const unixtime = Math.floor(Date.now() / 1000);
+                const browserTrackerId = document.getElementById('browserId').value
+                const joinAttemptId = document.getElementById('joinId').value
+
+                if (num == 1) {
+                    const options = {
+                        method: 'POST',
+                        headers: {
+                            cookie: `${cookie}`,
+                            referer: 'https://www.roblox.com/'
+                        },
+                        body: 'false'
+                    };
+                    //document.getElementById('playtoken').value = `cookie: ${cookie}\ngame id: ${gameId}\naccess code: ${privateServerAccessCode}\nreplicate: ${replicate}\nunixtime: ${unixtime}\nbrowser: ${browserTrackerId}\njoin attempt: ${joinAttemptId}`
+                    const aquireXCSRF = fetch('https://auth.roblox.com/v2/logout', options)
+                        .then(async response => { 
+                            const csrf = await response.headers.get('x-csrf-token');
+                            if (!csrf) {
+                                console.error('XCSRF Token could not be grabbed. (1)')
+                                return 1;
+                            }
+
+                            console.log('Got XCSRF Token successfully!')
+                            return csrf
+                        })
+                        .catch(err => console.error(err))
+                    aquireXCSRF.then(csrf => {
+                        console.log(csrf)
+                    })
+
+                    return
+                }
+                document.getElementById('playtoken').value = ""
+            }
+        </script>
+        <title>Roblox Playtoken Generator</title>
+    </head>
+    <body id="body">
+        <button onclick="changeStyle()" style="float: right;">Change Theme</button>
+        <button onclick="openHelp()" style="right: 10px; position: absolute; top: 50px">Help</button>
+        <h1 name="main">Roblox Playtoken Generator</h1>
+        
+        <form>
+            <div>
+                <label name="main">Cookie*</label><br>
+                <input type="text" id="cookie"><br><br>
+
+                <label name="main">Game ID*</label><br>
+                <input type="text" id="gameId"><br><br>
+
+                <label name="main">Private Server Access Code**</label><br>
+                <input type="text" id="accessCode"><br><br>
+            </div>
+            <div style="position: absolute; left: 375px; top: 80px;"> 
+                <input type="checkbox" id="replicate">
+                <label name="main">Replicate</label><br><br>
+
+                <label name="main">Browser Tracker ID</label><br>
+                <input type="text" id="browserId"><br><br>
+
+                <label name="main">Join Attempt ID</label><br>
+                <input type="text" id="joinId">
+            </div>
+        </form>
+        <div>
+            <button onclick="generate(1)">Generate</button>
+            <button onclick="generate(2)">Clear</button><br><br>
+        </div>
+        <div>
+            <label name="main">Playtoken: </label>
+            <button id="copy" onclick="copyToClipboard()">Copy To Clipboard</button><br>
+            <textarea id="playtoken" rows="15" cols="75" readonly></textarea>
+        </div>
+    </body>
 </html>
