@@ -5,6 +5,14 @@
         <style>
             body {background-color: rgb(33, 36, 44);}
             h1, p {color: rgb(243, 255, 251); font-family: 'Courier New', Courier, monospace; font-weight: bolder;}
+            .random {
+                position: absolute;
+                left: 50%;
+                transform: translateX(-50%);
+                height: 50px;
+                width: 20%;
+                font-size: xx-large;
+            }
         </style>
         <script>
             let isInput = true
@@ -39,6 +47,12 @@
         <button onclick="send(1)">set text</button>
         <button onclick="send(2)">clear</button>
 
-        <p id="output"></p>
+        <p id="output"></p><br>
+
+        <div style="border: 3px solid white; height: 500px;">
+            <h1 style="text-align: center;">random stuff</h1>
+            <button class="random" onclick="window.open('./random/ball/index.html')">falling "balls"</button><br>
+        </div>
+        
     </body>
 </html>
