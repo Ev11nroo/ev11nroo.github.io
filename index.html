@@ -4,7 +4,7 @@
     <head>
         <style>
             body {background-color: rgb(33, 36, 44);}
-            h1, p {color: rgb(243, 255, 251); font-family: 'Courier New', Courier, monospace; font-weight: bolder;}
+            h1 {color: rgb(243, 255, 251); font-family: 'Courier New', Courier, monospace; font-weight: bolder;}
             .random {
                 position: absolute;
                 left: 50%;
@@ -14,45 +14,15 @@
                 font-size: xx-large;
             }
         </style>
-        <script>
-            let isInput = true
-
-            function send(num) {
-                if (num == 1) {
-                    document.getElementById('output').innerHTML = document.getElementById('input').value;
-                    return;
-                }
-                document.getElementById('output').innerHTML = null;
-            }
-
-            function change() {
-                if (isInput) {
-                    isInput = false
-                    document.getElementById('input').outerHTML = "<textarea id='input' rows=15 cols=75></textarea>";
-                    document.getElementById('change').textContent = "change to input"
-                    return;
-                }
-                isInput = true
-                document.getElementById('change').textContent = "change to textarea"
-                document.getElementById('input').outerHTML = "<input type='text' id='input'>"
-            }
-        </script>
         <title>whatever</title>
     </head>
     <body>
-        <button id="change" style="float: right" onclick="change()">change to textarea</button>
         <h1>ameuter who ISNT trying their best (lo))_</h1>
-
-        <input type="text" id="input">
-        <button onclick="send(1)">set text</button>
-        <button onclick="send(2)">clear</button>
-
-        <p id="output"></p><br>
 
         <div style="border: 3px solid white; height: 500px;">
             <h1 style="text-align: center;">random stuff</h1>
-            <button class="random" onclick="window.open('./random/ball/index.html')">falling "balls"</button><br>
+            <button class="random" style="width: 25%;" onclick="window.open('./random/textinput/index.html')">text (HTML) input</button><br>
+            <button class="random" style="top: 225px" onclick="window.open('./random/ball/index.html')">falling "balls"</button><br>
         </div>
-        
     </body>
 </html>
