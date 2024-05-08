@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <style>
+            body {
+                background-color: rgb(33, 36, 44);
+            }
+            p {
+                color: rgb(255, 0, 0);
+                position: absolute;
+                font-family: 'Courier New', Courier, monospace;
+                font-size: xx-large;
+            }
+            button {
+                float: right;
+            }
+        </style>
+        <script src="./index.js"></script>
+        <title>ballingcatser43</title>
+    </head>
+    <body>
+        <div id="balls">
+            <p name="ball" style="top: 0px">o</p>
+        </div>
+        <button onclick="reset()">reset ball</button>
+        <button onclick="createBall()">create ball</button>
+        <button id="setState" onclick="setBallState()">start</button>
+    </body>
+</html>
