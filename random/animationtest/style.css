@@ -1,0 +1,39 @@
+body {
+    background-color: rgb(33, 36, 44);
+}
+h1, h2, p {
+    color: rgb(243, 255, 251); 
+    font-family: 'Courier New', Courier, monospace; 
+    font-weight: bolder;
+}
+div {
+    border-style: solid;
+    color: rgb(243, 255, 251);
+    margin-top: 10px;
+    animation-duration: 1s;
+    animation-fill-mode: both;
+}
+.title {
+    padding-left: 30px;
+}
+.arrow {
+    float: left;
+    margin-top: 25px;
+    padding-left: 10px;
+}
+@keyframes expand {
+    from {
+        height: 80px;
+    }
+    to {
+        height: 500px;
+    }
+}
+@keyframes reverse {
+    from {
+        height: 500px;
+    }
+    to {
+        height: 80px;
+    }
+}
