@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>animation test</title>
+        <style>
+            body {
+                background-color: rgb(33, 36, 44);
+            }
+            h1, h2, p {
+                color: rgb(243, 255, 251); 
+                font-family: 'Courier New', Courier, monospace; 
+                font-weight: bolder;
+            }
+            div {
+                border-style: solid;
+                color: rgb(243, 255, 251);
+                margin-top: 10px
+            }
+            .title {
+                padding-left: 30px;
+            }
+            .arrow {
+                float: left;
+                margin-top: 25px;
+                padding-left: 10px;
+            }
+        </style>
+        <script src="./index.js"></script>
+    </head>
+    <body>
+        <div onclick="alert('test')">
+            <h2 class="arrow">></h2>
+            <h1 class="title">test 1</h1>
+        </div>
+        <div onclick="alert('test 2')">
+            <h2 class="arrow">></h2>
+            <h1 class="title">test 2</h1>
+        </div>
+    </body>
+</html>
