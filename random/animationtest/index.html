@@ -16,7 +16,7 @@
                 color: rgb(243, 255, 251);
                 margin-top: 10px;
                 animation-duration: 1s;
-                animation-fill-mode: forwards;
+                animation-fill-mode: both;
             }
             .title {
                 padding-left: 30px;
@@ -32,6 +32,14 @@
                 }
                 to {
                     height: 500px;
+                }
+            }
+            @keyframes reverse {
+                from {
+                    height: 500px;
+                }
+                to {
+                    height: 80px;
                 }
             }
         </style>
