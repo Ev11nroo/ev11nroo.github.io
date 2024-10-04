@@ -25,21 +25,26 @@ div {
 }
 .content {
     padding-left: 5px;
+    padding-right: 5px;
 }
 @keyframes expand {
     from {
         height: 81px;
+        transform: rotate(0deg);
     }
     to {
         height: 500px;
+        transform: rotate(360deg);
     }
 }
 @keyframes reverse {
     from {
         height: 500px;
+        transform: rotate(360deg);
     }
     to {
         height: 81px;
+        transform: rotate(0deg);
     }
 }
 @keyframes rotate {
