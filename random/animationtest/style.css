@@ -28,7 +28,7 @@ div {
 }
 @keyframes expand {
     from {
-        height: 80px;
+        height: 81px;
     }
     to {
         height: 500px;
@@ -39,7 +39,7 @@ div {
         height: 500px;
     }
     to {
-        height: 80px;
+        height: 81px;
     }
 }
 @keyframes rotate {
