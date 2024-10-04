@@ -42,7 +42,6 @@ function toggleContent(num) {
     
     switch (num) {
         case 1:
-            
             Content1Shown = true;
             document.getElementById("content1").hidden = false;
             document.getElementById('content1').innerHTML = "this is indeed something that is possible with HTML (im too lazy to create an image)";
