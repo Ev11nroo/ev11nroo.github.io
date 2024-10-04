@@ -6,3 +6,12 @@ function expand(itemNum) {
 
     document.getElementById(itemNum).style.animationName = "expand";
 }
+
+function rotate(arrowNum) {
+    if (document.getElementById(arrowNum).style.animationName == "rotate") {
+        document.getElementById(arrowNum).style.animationName = "rotate-reverse";
+        return 0;
+    }
+
+    document.getElementById(arrowNum).style.animationName = "rotate";
+}

@@ -20,6 +20,8 @@ div {
     float: left;
     margin-top: 25px;
     padding-left: 10px;
+    animation-duration: 1s;
+    animation-fill-mode: both;
 }
 @keyframes expand {
     from {
@@ -35,5 +37,21 @@ div {
     }
     to {
         height: 80px;
+    }
+}
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(90deg);
+    }
+}
+@keyframes rotate-reverse {
+    from {
+        transform: rotate(90deg);
+    }
+    to {
+        transform: rotate(0deg);
     }
 }

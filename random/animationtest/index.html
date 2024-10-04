@@ -6,13 +6,17 @@
         <script src="./index.js"></script>
     </head>
     <body>
-        <div onclick="expand('item1')" id="item1">
-            <h2 class="arrow">></h2>
+        <div onclick="expand('item1'); rotate('arrow1')" id="item1">
+            <h2 class="arrow" id="arrow1">></h2>
             <h1 class="title">test 1</h1>
         </div>
-        <div onclick="expand('item2')" id="item2">
-            <h2 class="arrow">></h2>
+        <div onclick="expand('item2'); rotate('arrow2')" id="item2">
+            <h2 class="arrow" id="arrow2">></h2>
             <h1 class="title">test 2</h1>
+        </div>
+        <div onclick="expand('item3'); rotate('arrow3')" id="item3">
+            <h2 class="arrow" id="arrow3">></h2>
+            <h1 class="title">test 3</h1>
         </div>
     </body>
 </html>
