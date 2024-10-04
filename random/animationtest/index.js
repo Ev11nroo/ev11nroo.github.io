@@ -1,3 +1,3 @@
-function expand() {
-    document.getElementById("item1").style.height = "500px";
+function expand(itemNum) {
+    document.getElementById(itemNum).style.animationName = "expand";
 }
