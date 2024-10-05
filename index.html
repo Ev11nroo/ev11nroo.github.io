@@ -11,17 +11,17 @@
                 font-family: 'Courier New', Courier, monospace; 
                 font-weight: bolder;
             }
-            div {
-                border: 3px solid white; 
-                height: 500px;
-                text-align: center;
-            }
             button {
                 color: rgb(0, 0, 0);
             }
             .random {
                 height: 50px;
                 font-size: x-large;
+            }
+            div {
+                border: 3px solid white; 
+                text-align: center;
+                padding-bottom: 50px
             }
             .date {
                 display: inline-block;
@@ -30,7 +30,13 @@
             .random-box {
                 display: flex;
                 flex-direction: column;
+                flex-wrap: wrap;
                 align-items: center;
+            }
+            div > .random-items {
+                border: 0px;
+                padding-bottom: 0px;
+                display: inline-block;
             }
         </style>
         <title>a thing</title>
@@ -40,13 +46,14 @@
         <p>a person who tries doing something and then forgets about it</p>
 
         <div class="random-box">
-            <h1>random stuff</h1>
-            <button class="random" onclick="window.open('./random/textinput/index.html', '_self')">text (HTML) input</button>
-            <p class="date">(May 8, 2024)</p><br>
-            <button class="random" onclick="window.open('./random/ball/index.html', '_self')">falling "balls"</button>
-            <p class="date">(May 8, 2024)</p><br>
-            <button class="random" onclick="window.open('./random/animationtest/index.html', '_self')">animation test</button>
-            <p class="date">(October 3, 2024)</p><br>
-        </div>
+            <h1 style="align-self: center;">random stuff</h1>
+            <div class="random-items">
+                <button class="random" onclick="window.open('./random/textinput/index.html', '_self')">text (HTML) input</button>
+                <p class="date">(May 8, 2024)</p><br>
+                <button class="random" onclick="window.open('./random/ball/index.html', '_self')">falling "balls"</button>
+                <p class="date">(May 8, 2024)</p><br>
+                <button class="random" onclick="window.open('./random/animationtest/index.html', '_self')">animation test</button>
+                <p class="date">(October 3, 2024)</p><br>
+            </div>
     </body>
 </html>
