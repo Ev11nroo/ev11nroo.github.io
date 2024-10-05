@@ -28,15 +28,13 @@
                 vertical-align: middle;
             }
             .random-box {
-                display: flex;
-                flex-direction: column;
-                flex-wrap: wrap;
-                align-items: center;
+                display: grid;
+                grid-template-columns: auto auto auto auto auto;
             }
             div > .random-items {
                 border: 0px;
                 padding-bottom: 0px;
-                display: inline-block;
+                grid-column: 1 / 6;
             }
         </style>
         <title>a thing</title>
@@ -46,7 +44,7 @@
         <p>a person who tries doing something and then forgets about it</p>
 
         <div class="random-box">
-            <h1 style="align-self: center;">random stuff</h1>
+            <h1 style="grid-column: 1 / 6;">random stuff</h1>
             <div class="random-items">
                 <button class="random" onclick="window.open('./random/textinput/index.html', '_self')">text (HTML) input</button>
                 <p class="date">(May 8, 2024)</p><br>
