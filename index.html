@@ -29,14 +29,13 @@
             }
             .random-box {
                 display: grid;
-                grid-template-columns: auto auto auto auto auto;
+                grid-template-columns: auto auto auto auto;
             }
             div > .random-items {
                 border: 0px;
                 padding-bottom: 0px;
-                grid-column: 1 / 6;
             }
-            @media (max-width: 700px) {
+            @media (max-width: 850px) {
                 .random-box {
                     display: flex;
                     flex-direction: column;
@@ -52,8 +51,8 @@
         <p>a person who tries doing something and then forgets about it</p>
 
         <div class="random-box">
-            <h1 style="grid-column: 1 / 6;">random stuff</h1>
-            <div class="random-items">
+            <h1 style="grid-column: 1 / 5;">random stuff</h1>
+            <div class="random-items" style="grid-column: 1 / 5;">
                 <button class="random" onclick="window.open('./random/textinput/index.html', '_self')">text (HTML) input</button>
                 <p class="date">(May 8, 2024)</p><br>
                 <button class="random" onclick="window.open('./random/ball/index.html', '_self')">falling "balls"</button>
