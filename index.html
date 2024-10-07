@@ -11,8 +11,14 @@
                 font-family: 'Courier New', Courier, monospace; 
                 font-weight: bolder;
             }
-            button {
-                color: rgb(0, 0, 0);
+            a {
+                color: rgb(33, 36, 44);
+                border-radius: 10px;
+                padding: 8px;
+                background-color: white;
+                text-decoration: none;
+                font-family: 'Courier New', Courier, monospace;
+                font-weight: bolder;
             }
             .random {
                 height: 50px;
@@ -53,11 +59,11 @@
         <div class="random-box">
             <h1 style="grid-column: 1 / 5;">random stuff</h1>
             <div class="random-items" style="grid-column: 1 / 5;">
-                <button class="random" onclick="window.open('./random/textinput/index.html', '_self')">text (HTML) input</button>
+                <a class="random" href="./random/textinput/index.html">text (HTML) input</a>
                 <p class="date">(May 8, 2024)</p><br>
-                <button class="random" onclick="window.open('./random/ball/index.html', '_self')">falling "balls"</button>
+                <a class="random" href="./random/ball/index.html">falling "balls"</a>
                 <p class="date">(May 8, 2024)</p><br>
-                <button class="random" onclick="window.open('./random/animationtest/index.html', '_self')">animation test</button>
+                <a class="random" href="./random/animationtest/index.html">animation test</a>
                 <p class="date">(October 3, 2024)</p><br>
             </div>
     </body>
