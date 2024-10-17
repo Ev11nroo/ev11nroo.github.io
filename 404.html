@@ -2,11 +2,51 @@
 
 <html>
     <head>
+        <style>
+            body {
+                background-color: rgb(33, 36, 44);
+            }
+            h1, p {
+                color: rgb(243, 255, 251); 
+                font-family: 'Courier New', Courier, monospace; 
+                font-weight: bolder;
+                text-align: center;
+            }
+            h1 {
+                font-size: 100px;
+            }
+            a {
+                color: rgb(33, 36, 44);
+                border-radius: 10px;
+                padding: 8px;
+                background-color: white;
+                text-decoration: none;
+                font-family: 'Courier New', Courier, monospace;
+                font-weight: bolder;
+            }
+            a:hover {
+                text-decoration: underline;
+            }
+            .random {
+                height: 50px;
+                font-size: x-large;
+            }
+            div {
+                border: 3px solid white;
+                border-radius: 10px;
+                text-align: center;
+                padding-bottom: 20px;
+            }
+        </style>
+        <meta charset="UTF-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
         <title>404</title>
     </head>
     <body>
-        <h1>404</h1>
-        <p>this page does not exist, or has been deleted</p>
-        <a href="https://ev11nroo.github.io/index.html">return to website home page</a>
+        <h1 id="status">404</h1>
+        <div>
+            <p>this page does not exist, or has been deleted</p>
+            <a href="https://ev11nroo.github.io/index.html">return to website home page</a>
+        </div>
     </body>
 </html>
