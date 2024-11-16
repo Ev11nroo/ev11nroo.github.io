@@ -23,7 +23,7 @@
             a:hover {
                 text-decoration: underline;
             }
-            .random {
+            .main-items {
                 height: 50px;
                 font-size: x-large;
             }
@@ -38,17 +38,17 @@
                 display: inline-block;
                 vertical-align: middle;
             }
-            .random-box {
+            .item-box {
                 display: grid;
                 grid-template-columns: auto auto auto auto;
             }
-            div > .random-items {
+            div > .invis-box {
                 border: 0px;
                 padding-bottom: 0px;
                 margin-bottom: 0px;
             }
             @media (max-width: 850px) {
-                .random-box {
+                .item-box {
                     display: flex;
                     flex-direction: column;
                     flex-wrap: wrap;
@@ -64,20 +64,24 @@
         <h1>Ev11nroo (aka. roo)</h1>
         <p>a person who tries doing something and then forgets about it</p>
 
-        <div class="random-box">
+        <div class="item-box">
             <h1 style="grid-column: 1 / 5;">random stuff</h1>
-            <div class="random-items" style="grid-column: 1 / 5;">
-                <a class="random" href="./random/textinput/index.html">text (HTML) input</a>
+            <div class="invis-box" style="grid-column: 1 / 5;">
+                <a class="main-items" href="./random/textinput/index.html">text (HTML) input</a>
                 <p class="date">(May 8, 2024)</p><br>
-                <a class="random" href="./random/ball/index.html">falling "balls"</a>
+                <a class="main-items" href="./random/ball/index.html">falling "balls"</a>
                 <p class="date">(May 8, 2024)</p><br>
-                <a class="random" href="./random/animationtest/index.html">animation test</a>
+                <a class="main-items" href="./random/animationtest/index.html">animation test</a>
                 <p class="date">(October 3, 2024)</p><br>
             </div>
         </div>
 
-        <div class="project-box">
-            <h1>some projects</h1>
+        <div class="item-box">
+            <h1 style="grid-column: 1 / 5;">some projects</h1>
+            <div class="invis-box" style="grid-column: 1 / 5;">]
+                <a class="main-items" href="https://github.com/Ev11nroo/ev11nroo.github.io">this website</a>
+                <a class="main-items" href="https://github.com/Ev11nroo/roblox-cmd-launcher">roblox-cmd-launcher</a>
+            </div>
         </div>
     </body>
 </html>
