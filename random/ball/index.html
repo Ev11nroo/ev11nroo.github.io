@@ -13,8 +13,12 @@
                 font-size: xx-large;
             }
             button {
-                float: right;
                 color: rgb(0, 0, 0);
+            }
+            #buttons {
+                position: fixed;
+                right: 0;
+                padding-right: 5px;
             }
         </style>
         <meta charset="UTF-8"/>
@@ -26,8 +30,10 @@
         <div id="balls">
             <p name="ball" style="top: 0px">o</p>
         </div>
-        <button onclick="reset()">reset ball</button>
-        <button onclick="createBall()">create ball</button>
-        <button id="setState" onclick="setBallState()">start</button>
+        <div id="buttons">
+            <button id="setState" onclick="setBallState()">start</button>
+            <button onclick="createBall()">create ball</button>
+            <button onclick="reset()">reset ball</button>
+        </div>
     </body>
 </html>
