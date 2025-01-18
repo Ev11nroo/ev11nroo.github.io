@@ -1,7 +1,7 @@
 body {
     background-color: rgb(33, 36, 44);
 }
-h1, h2, p, li {
+h1, h2, h3, p, li {
     color: rgb(243, 255, 251); 
     font-family: 'Courier New', Courier, monospace; 
     font-weight: bolder;
