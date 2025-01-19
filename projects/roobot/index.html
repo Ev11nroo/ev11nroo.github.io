@@ -48,6 +48,10 @@
                 border-width: 0px;
                 flex-direction: row;
             }
+            .subcommand-name {
+                margin-top: -2px;
+                font-size: medium;
+            }
             .command-indent {
                 margin-left: 15px;
                 font-family: monospace;
@@ -62,6 +66,13 @@
                 padding-right: 10px;
                 background-color: rgb(31, 33, 39);
                 font-family: monospace;
+            }
+            .subcommand-variable {
+                margin-top: -8px;
+            }
+            .subcommand-tag {
+                border: 2px solid rgb(161, 132, 88);
+                background-color: rgb(110, 99, 81);
             }
         </style>
         <meta charset="UTF-8"/>
@@ -100,6 +111,7 @@
                 <p class="command-indent">number: choose a certain quote</p>
                 <p class="command-indent">text: changes quote from embed to text</p>
                 <hr>
+
                 <div class="command-name">
                     <h3 style="padding-right: 10px;">/8ball</h3>
                     <h3 class="variable">question: str</h3>
@@ -109,6 +121,45 @@
                 <h3>variables</h3>
                 <p class="command-indent">question: the message/question for 8ball</p>
                 <p class="command-indent">text: changes 8-ball result from embed to text</p>
+                <hr>
+
+                <div class="command-name">
+                    <h3 style="padding-right: 10px;">/giveaway</h3>
+                    <h3 class="variable subcommand-tag">subcommands</h3>
+                </div>
+                <p class="command-indent">manage giveaways</p>
+                <h3>subcommands</h3>
+                <div class="command-name">
+                    <h3 class="subcommand-name" style="padding-right: 10px;">create</h3>
+                    <h3 class="variable subcommand-name subcommand-variable">item: str</h3>
+                    <h3 class="variable subcommand-name subcommand-variable">end_time: int</h3>
+                    <h3 class="variable subcommand-name subcommand-variable">winners: int</h3>
+                    <h3 class="variable subcommand-name subcommand-variable">channel: channel</h3>
+                    <h3 class="variable subcommand-name subcommand-variable">end_embed: bool</h3>
+                </div>
+                <p class="command-indent">create a new giveaway</p>
+                <p class="command-indent">item: the item to giveaway</p>
+                <p class="command-indent">end_time: the time in seconds to end</p>
+                <p class="command-indent">winners: amount of winners allowed</p>
+                <p class="command-indent">channel: the channel to send the giveaway prompt to</p>
+                <p class="command-indent">end_time: whether to use an embed or plain text at giveaway end</p>
+                <div class="command-name">
+                    <h3 class="subcommand-name" style="padding-right: 10px;">builder</h3>
+                </div>
+                <p class="command-indent">gui menu to create a giveaway in current channel</p>
+                <div class="command-name">
+                    <h3 class="subcommand-name" style="padding-right: 10px;">reroll</h3>
+                    <h3 class="variable subcommand-name subcommand-variable">id: str</h3>
+                    <h3 class="variable subcommand-name subcommand-variable">amount: int</h3>
+                    <h3 class="variable subcommand-name subcommand-variable">end_embed: bool</h3>
+                </div>
+                <p class="command-indent">choose another winner for a giveaway</p>
+                <p class="command-indent">id: the id of the giveaway to reroll</p>
+                <p class="command-indent">amount: how many should be rerolled</p>
+                <p class="command-indent">end_time: whether to use an embed or plain text at reroll</p>
+                <hr>
+
+                
             </div>
         </div>
     </body>
