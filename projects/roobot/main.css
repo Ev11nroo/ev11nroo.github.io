@@ -90,3 +90,7 @@ hr {
     border-color: rgb(212, 31, 31);
     background-color: rgb(146, 47, 47);
 }
+.botinfo-tag {
+    border-color: rgb(131, 111, 146);
+    background-color: rgb(175, 135, 207);
+}
