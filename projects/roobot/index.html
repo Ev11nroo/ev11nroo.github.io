@@ -71,8 +71,16 @@
                 margin-top: -8px;
             }
             .subcommand-tag {
-                border: 2px solid rgb(161, 132, 88);
+                border-color: rgb(161, 132, 88);
                 background-color: rgb(110, 99, 81);
+            }
+            .activity-tag {
+                border-color: rgb(88, 179, 159);
+                background-color: rgb(62, 105, 96);
+            }
+            .utility-tag {
+                border-color: rgb(37, 117, 184);
+                background-color: rgb(36, 77, 110);
             }
         </style>
         <meta charset="UTF-8"/>
@@ -106,6 +114,7 @@
                     <h3 style="padding-right: 10px;">/quote</h3>
                     <h3 class="variable">number: int</h3>
                     <h3 class="variable">text: bool</h3>
+                    <h3 class="variable activity-tag">activity</h3>
                 </div>
                 <p class="command-indent">random quote thats "inspirational"</p>
                 <h3>variables</h3>
@@ -118,6 +127,7 @@
                     <h3 style="padding-right: 10px;">/8ball</h3>
                     <h3 class="variable">question: str</h3>
                     <h3 class="variable">text: bool</h3>
+                    <h3 class="variable activity-tag">activity</h3>
                 </div>
                 <p class="command-indent">either yes or no</p>
                 <h3>variables</h3>
@@ -129,6 +139,7 @@
                 <div class="command-name">
                     <h3 style="padding-right: 10px;">/giveaway</h3>
                     <h3 class="variable subcommand-tag">subcommands</h3>
+                    <h3 class="variable utility-tag">utility</h3>
                 </div>
                 <p class="command-indent">manage giveaways</p>
                 <h3>subcommands</h3>
@@ -161,8 +172,6 @@
                 <p class="command-indent">amount: how many should be rerolled</p>
                 <p class="command-indent">end_time: whether to use an embed or plain text at reroll</p>
                 <hr>
-
-
             </div>
         </div>
     </body>
