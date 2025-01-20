@@ -94,3 +94,7 @@ hr {
     border-color: rgb(131, 111, 146);
     background-color: rgb(175, 135, 207);
 }
+.legacy-tag {
+    border-color: rgb(103, 212, 194);
+    background-color: rgb(71, 173, 93);
+}
