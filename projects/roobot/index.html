@@ -91,6 +91,10 @@
                 border-color: rgb(230, 166, 29);
                 background-color: rgb(184, 150, 2);
             }
+            .deprecated-tag {
+                border-color: rgb(212, 31, 31);
+                background-color: rgb(146, 47, 47);
+            }
         </style>
         <meta charset="UTF-8"/>
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
@@ -212,6 +216,21 @@
                 <p class="command-indent">option3: the third option for poll</p>
                 <p class="command-indent">option4: the fourth option for poll</p>
                 <hr>
+
+                <!--legacy_giveaway command-->
+                <div class="command-name">
+                    <h3 style="padding-right: 10px">/legacy_giveaway</h3>
+                    <h3 class="variable">item: str</h3>
+                    <h3 class="variable">end_time: int</h3>
+                    <h3 class="variable">reply_to: bool</h3>
+                    <h3 class="variable deprecated-tag">deprecated</h3>
+                    <h3 class="variable utility-tag">utility</h3>
+                </div>
+                <p class="command-indent">create a giveaway</p>
+                <h3>variables</h3>
+                <p class="command-indent">item: set the item to giveaway</p>
+                <p class="command-indent">end_time: the time (in seconds) to end</p>
+                <p class="command-indent">reply_to: either reply to original message or edit</p>
             </div>
         </div>
     </body>
