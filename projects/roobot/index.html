@@ -60,13 +60,17 @@
             }
             .variable {
                 border-radius: 10px;
-                border: 2px solid rgb(84, 89, 104);
+                border: 2px solid rgb(120, 127, 148);
                 padding-top: 5px;
                 padding-left: 10px;
                 margin-right: 10px;
                 padding-right: 10px;
-                background-color: rgb(31, 33, 39);
+                background-color: rgb(78, 84, 102);
                 font-family: monospace;
+            }
+            .optional-variable {
+                border-color: rgb(84, 89, 104);
+                background-color: rgb(31, 33, 39);
             }
             .subcommand-variable {
                 margin-top: -8px;
@@ -113,8 +117,8 @@
                 <!--quote command-->
                 <div class="command-name">
                     <h3 style="padding-right: 10px;">/quote</h3>
-                    <h3 class="variable">number: int</h3>
-                    <h3 class="variable">text: bool</h3>
+                    <h3 class="variable optional-variable">number: int</h3>
+                    <h3 class="variable optional-variable">text: bool</h3>
                     <h3 class="variable activity-tag">activity</h3>
                 </div>
                 <p class="command-indent">random quote thats "inspirational"</p>
@@ -126,8 +130,8 @@
                 <!--8ball command-->
                 <div class="command-name">
                     <h3 style="padding-right: 10px;">/8ball</h3>
-                    <h3 class="variable">question: str</h3>
-                    <h3 class="variable">text: bool</h3>
+                    <h3 class="variable optional-variable">question: str</h3>
+                    <h3 class="variable optional-variable">text: bool</h3>
                     <h3 class="variable activity-tag">activity</h3>
                 </div>
                 <p class="command-indent">either yes or no</p>
@@ -149,8 +153,8 @@
                     <h3 class="variable subcommand-name subcommand-variable">item: str</h3>
                     <h3 class="variable subcommand-name subcommand-variable">end_time: int</h3>
                     <h3 class="variable subcommand-name subcommand-variable">winners: int</h3>
-                    <h3 class="variable subcommand-name subcommand-variable">channel: channel</h3>
-                    <h3 class="variable subcommand-name subcommand-variable">end_embed: bool</h3>
+                    <h3 class="variable subcommand-name subcommand-variable optional-variable">channel: channel</h3>
+                    <h3 class="variable subcommand-name subcommand-variable optional-variable">end_embed: bool</h3>
                 </div>
                 <p class="command-indent">create a new giveaway</p>
                 <p class="command-indent">item: the item to giveaway</p>
@@ -165,13 +169,32 @@
                 <div class="command-name">
                     <h3 class="subcommand-name" style="padding-right: 10px;">reroll</h3>
                     <h3 class="variable subcommand-name subcommand-variable">id: str</h3>
-                    <h3 class="variable subcommand-name subcommand-variable">amount: int</h3>
-                    <h3 class="variable subcommand-name subcommand-variable">end_embed: bool</h3>
+                    <h3 class="variable subcommand-name subcommand-variable optional-variable">amount: int</h3>
+                    <h3 class="variable subcommand-name subcommand-variable optional-variable">end_embed: bool</h3>
                 </div>
                 <p class="command-indent">choose another winner for a giveaway</p>
                 <p class="command-indent">id: the id of the giveaway to reroll</p>
                 <p class="command-indent">amount: how many should be rerolled</p>
                 <p class="command-indent">end_time: whether to use an embed or plain text at reroll</p>
+                <hr>
+
+                <!--poll command-->
+                <div class="command-name">
+                    <h3 style="padding-right: 10px;">/poll</h3>
+                    <h3 class="variable">question: str</h3>
+                    <h3 class="variable">option1: str</h3>
+                    <h3 class="variable">option2: str</h3>
+                    <h3 class="variable optional-variable">option3: str</h3>
+                    <h3 class="variable optional-variable">option4: str</h3>
+                    <h3 class="variable utility-tag">utility</h3>
+                </div>
+                <p class="command-indent">create a poll</p>
+                <h3>variables</h3>
+                <p class="command-indent">question: the question/message for poll</p>
+                <p class="command-indent">option1: the first option for poll</p>
+                <p class="command-indent">option2: the second option for poll</p>
+                <p class="command-indent">option3: the third option for poll</p>
+                <p class="command-indent">option4: the fourth option for poll</p>
                 <hr>
             </div>
         </div>
