@@ -1,0 +1,92 @@
+div {
+    border: 3px solid white;
+    border-radius: 10px;
+    text-align: center;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    margin-bottom: 10px;
+}
+a {
+    color: rgb(33, 36, 44);
+    border-radius: 10px;
+    padding: 8px;
+    background-color: white;
+    text-decoration: none;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bolder;
+}
+a:hover {
+    text-decoration: underline;
+}
+hr {
+    border: 3px solid rgb(84, 89, 104);
+    border-radius: 3px;
+    margin-right: 20px;
+}
+.title {
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-template-rows: auto;
+    place-content: center center;
+    column-gap: 10px;
+}
+.commands {
+    border-width: 0px;
+    text-align: left;
+    padding-left: 20px;
+}
+.command-name {
+    display: flex;
+    padding-bottom: 0px;
+    padding-top: 0px;
+    margin-bottom: -15px;
+    border-width: 0px;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+.subcommand-name {
+    margin-top: -2px;
+    font-size: medium;
+}
+.command-indent {
+    margin-left: 15px;
+    font-family: monospace;
+    font-size: larger;
+}
+.variable {
+    border-radius: 10px;
+    border: 2px solid rgb(120, 127, 148);
+    padding-top: 5px;
+    padding-left: 10px;
+    margin-right: 10px;
+    padding-right: 10px;
+    background-color: rgb(78, 84, 102);
+    font-family: monospace;
+}
+.optional-variable {
+    border-color: rgb(84, 89, 104);
+    background-color: rgb(31, 33, 39);
+}
+.subcommand-variable {
+    margin-top: -8px;
+}
+.subcommand-tag {
+    border-color: rgb(161, 132, 88);
+    background-color: rgb(110, 99, 81);
+}
+.activity-tag {
+    border-color: rgb(88, 179, 159);
+    background-color: rgb(62, 105, 96);
+}
+.utility-tag {
+    border-color: rgb(37, 117, 184);
+    background-color: rgb(36, 77, 110);
+}
+.beta-tag {
+    border-color: rgb(230, 166, 29);
+    background-color: rgb(184, 150, 2);
+}
+.deprecated-tag {
+    border-color: rgb(212, 31, 31);
+    background-color: rgb(146, 47, 47);
+}
