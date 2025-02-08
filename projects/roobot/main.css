@@ -15,6 +15,13 @@ a {
     font-family: 'Courier New', Courier, monospace;
     font-weight: bolder;
 }
+.inline-a {
+    color: rgb(243, 255, 251);
+    border-radius: 0px;
+    padding: 0px;
+    background-color: transparent;
+    text-decoration: underline;
+}
 a:hover {
     text-decoration: underline;
 }
