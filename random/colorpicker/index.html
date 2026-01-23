@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <style>
+            label, a {
+                color: rgb(243, 255, 251); 
+                font-family: 'Courier New', Courier, monospace; 
+                font-weight: bolder;
+            }
+            div {
+                border: 3px solid white;
+                border-radius: 10px;
+                text-align: center;
+                padding-bottom: 10px;
+                padding-top: 10px;
+                margin-bottom: 10px;
+            }
+            input {
+                margin-top: 10px;
+            }
+        </style>
+        <meta charset="UTF-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <link rel="stylesheet" href="../../style.css">
+        <script src="./index.js"></script>
+        <title>simple color picker i guess</title>
+    </head>
+    <body>
+        <div>
+            <input type="color" id="color" name="color" value="#646464"/>
+            <p id="rgb">rgb: 100, 100, 100</p>
+            <p id="hsv">hsv: something, something, seomthing</p>
+            <p id="hex">hex: 646464</p>
+        </div>
+        <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/input/color">thanks mdm docs</a>
+    </body>
+</html>
