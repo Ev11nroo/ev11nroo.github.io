@@ -1,7 +1,5 @@
 function turnPartialHexToDecimal(partHex) {
     const hex = `0x${partHex}`;
-    console.log(hex);
-    console.log(Number(hex));
 
     return Number(hex);
 }
